@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: supportflow-postgres
+
+    environment:
+      POSTGRES_USER: supportflow
+      POSTGRES_PASSWORD: supportflow
+      POSTGRES_DB: supportflow
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - supportflow_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  supportflow_postgres_data:
