@@ -1,7 +1,12 @@
 from fastapi import APIRouter
 
 from app.ai.client import openai_client
-from app.ai.schemas import AIRequest, AIResponse
+from app.ai.schemas import (
+    AIRequest,
+    AIResponse,
+    EmailClassification,
+    EmailClassificationRequest,
+)
 
 
 router = APIRouter(
@@ -21,4 +26,16 @@ def test_ai(request: AIRequest) -> AIResponse:
 
     return AIResponse(
         response=response_text,
+    )
+
+@router.post(
+    "/classify",
+    response_model=EmailClassification,
+)
+def classify_email(
+    request: EmailClassificationRequest,
+) -> EmailClassification:
+    return openai_client.classify_email(
+        subject=request.subject,
+        body=request.body,
     )

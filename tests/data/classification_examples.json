@@ -1,0 +1,17 @@
+[
+  {
+    "subject": "Charged twice",
+    "body": "I was charged twice this month.",
+    "expected_intent": "BILLING"
+  },
+  {
+    "subject": "Cancel",
+    "body": "Please cancel my subscription.",
+    "expected_intent": "CANCELLATION"
+  },
+  {
+    "subject": "Package",
+    "body": "Where is order ORD-123?",
+    "expected_intent": "ORDER_STATUS"
+  }
+]
