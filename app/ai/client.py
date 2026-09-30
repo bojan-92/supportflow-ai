@@ -48,6 +48,7 @@ class OpenAIClient:
                         "product documentation, or other internal knowledge. "
                         "Set requires_human_review to true for sensitive, "
                         "ambiguous, high-risk, or urgent cases. Language put as ISO 2 chars standard value."
+                        "Classify based on the customer's primary goal."
                     ),
                 },
                 {
